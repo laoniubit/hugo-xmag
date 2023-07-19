@@ -1,9 +1,9 @@
 ---
-title: A Plain Markdown Post
+title: New Files
 author:
   - laoniu
-  - Frida Gomam
-date: 2017-02-14T00:00:00Z
+  - '161'
+date: 2017-02-01T00:00:00Z
 categories:
   - Example
   - Hugo
