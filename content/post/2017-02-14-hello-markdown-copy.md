@@ -1,7 +1,7 @@
 ---
 title: A Plain Markdown Post
 author:
-  - Yihui Xie
+  - laoniu
   - Frida Gomam
 date: 2017-02-14T00:00:00Z
 categories:
@@ -15,121 +15,22 @@ tags:
   - RStudio
 toc: true
 ---
-This sample post is mainly for [**blogdown**](https://github.com/rstudio/blogdown) users. If you do not use **blogdown**, you can skip the first section. To know more about the Hugo XMag theme, please read the [About](/about/) page.
+Linux jq 是一个命令行工具，用于处理和查询 JSON 数据。它是一个轻量级的、灵活的 JSON 解析器，可以帮助用户在命令行中对 JSON 数据进行筛选、转换和操作。
 
-# 1\. Markdown or R Markdown
+jq 提供了一种简洁而强大的方式来处理 JSON 数据，它具有类似于 AWK 的语法，可以通过选择器表达式来定位和操作 JSON 数据的特定部分。用户可以使用 jq 在命令行中提取、修改、过滤和组织 JSON 数据，以满足特定的需求。
 
-This is a post written in plain Markdown (`*.md`) instead of R Markdown (`*.Rmd`). The major differences are:
+以下是一些 jq 常用的功能和用法：
 
-1. You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (<code>```{r}</code>);
-2. A plain Markdown post is rendered through [Blackfriday](https://gohugo.io/overview/configuration/), and an R Markdown document is compiled by [**rmarkdown**](http://rmarkdown.rstudio.com) and [Pandoc](http://pandoc.org).
+选择器表达式：使用选择器表达式可以定位和提取 JSON 数据的特定部分。例如，jq '.foo.bar' 将选择 JSON 对象中名为 "foo" 的属性，并提取其中名为 "bar" 的属性值。
 
-There are many differences in syntax between Blackfriday's Markdown and Pandoc's Markdown. For example, you can write a task list with Blackfriday but not with Pandoc:
+过滤器：jq 允许用户使用过滤器来筛选 JSON 数据。通过使用条件表达式，可以根据特定的条件来选择 JSON 对象或数组的元素。
 
-* \[x\] Write an R package.
-* \[ \] Write a book.
-* \[ \] ...
-* \[ \] Profit!
+转换：用户可以使用 jq 对 JSON 数据进行转换和重构。例如，可以使用 map 函数对 JSON 数组中的每个元素进行处理，并生成一个新的数组。
 
-Similarly, Blackfriday does not support LaTeX math and Pandoc does. I have added the MathJax support to this theme ([hugo-xmin](https://github.com/yihui/hugo-xmag)) but there is a caveat for plain Markdown posts: you have to include math expressions in a pair of backticks (inline: <code>`$ $`</code>; display style: <code>`$$ $$`</code>), e.g., `$S_n = \sum_{i=1}^n X_i$`.^\[This is because we have to protect the math expressions from being interpreted as Markdown. You may not need the backticks if your math expression does not contain any special Markdown syntax such as underscores or asterisks, but it is always a safer choice to use backticks. When you happen to have a pair of literal dollar signs inside the same element, you can escape one dollar sign, e.g., `\$50 and $100` renders "$50 and $100".\] For R Markdown posts, you do not need the backticks, because Pandoc can identify and process math expressions.
+条件和控制流：jq 支持条件语句和控制流语句，以便根据特定的条件执行不同的操作。
 
-When creating a new post, I recommend you to use the RStudio addin "New Post":
+输入输出：jq 可以从标准输入、文件或网络流中读取 JSON 数据，并将结果输出到标准输出或文件中。这使得它可以与其他命令行工具和管道结合使用。
 
-![RStudio addin New Post](https://bookdown.org/yihui/blogdown/images/new-post.png)
+内置函数：jq 提供了一些内置函数，用于处理字符串、数值和日期等常见的 JSON 数据类型。这些函数可以在选择器表达式和过滤器中使用，以实现更复杂的操作。
 
-# 2\. Sample Text
-
-## Second-level header
-
-### Third-level header
-
-#### Fourth-level header
-
-A paragraph (with a footnote):
-
-**Lorem ipsum** dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore *magna aliqua*. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.^\[I'm sure you are bored by the text here.\]
-
-A blockquote (a gray bar at the left and lightgray background):
-
-> Quisque mattis volutpat lorem vitae feugiat. Praesent porta est quis porta imperdiet. Aenean porta, mi non cursus volutpat, mi est mollis libero, id suscipit orci urna a augue. In fringilla euismod lacus, vitae tristique massa ultricies vitae. Mauris accumsan ligula tristique, viverra nulla sed, porta sapien. Vestibulum facilisis nec nisl blandit convallis. Maecenas venenatis porta malesuada. Ut ac erat tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla sodales quam sit amet tincidunt egestas. In et turpis at orci vestibulum ullamcorper. Aliquam sed ante libero. Sed hendrerit arcu lacus.
-
-Some code (with a drop-shadow effect):
-
-```js
-(function() {
-  var quotes = document.getElementsByTagName('blockquote'), i, quote;
-  for (i = 0; i < quotes.length; i++) {
-    quote = quotes[i];
-    var n = quote.children.length;
-    if (n === 0) continue;
-    var el = quote.children[n - 1];
-    if (!el || el.nodeName !== 'P') continue;
-    // right-align a quote footer if it starts with ---
-    if (/^—/.test(el.textContent)) el.style.textAlign = 'right';
-  }
-})();
-```
-
-A table (centered by default):
-
-<table>
-<thead>
-<tr>
-<th>Sepal.Length</th>
-<th>Sepal.Width</th>
-<th>Petal.Length</th>
-<th>Petal.Width</th>
-<th>Species</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5.1</td>
-<td>3.5</td>
-<td>1.4</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr>
-<td>4.9</td>
-<td>3.0</td>
-<td>1.4</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr>
-<td>4.7</td>
-<td>3.2</td>
-<td>1.3</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr>
-<td>4.6</td>
-<td>3.1</td>
-<td>1.5</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr>
-<td>5.0</td>
-<td>3.6</td>
-<td>1.4</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr>
-<td>5.4</td>
-<td>3.9</td>
-<td>1.7</td>
-<td>0.4</td>
-<td>setosa</td>
-</tr>
-</tbody>
-</table>
-
-An image (automatically centered when it is appropriate):
-
-![Happy Elmo](https://slides.yihui.org/gif/happy-elmo.gif)
-
-Looks good?
+总的来说，jq 是一个功能强大的工具，适用于处理和查询 JSON 数据。它可以作为命令行工具或脚本语言使用，方便地集成到各种自动化和数据处理任务中。
