@@ -1,11 +1,11 @@
 ---
-title: Jeff Leek is the Uniformly Most Powerful Jeff
-author: Michael Hoffman
-date: 2015-07-23T00:00:00Z
+title: Jeff Leek can do zero-fold cross-validation
+date: '2015-07-28'
+author: Thomas Lumley
 categories:
-  - Statistics
+  - Machine Learning
 tags:
   - Markdown
   - Lorem Ipsum
-thumbnail: https://db.yihui.org/images/saga7.gif
+thumbnail: https://db.yihui.org/imgur/CwBsAqs.png
 ---

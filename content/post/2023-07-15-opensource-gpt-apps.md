@@ -1,11 +1,14 @@
 ---
-slug: opensource-chatgpt-apps
-title: "近期热门 ChatGPT 相关开源项目汇总"
-authors: [xinzhi]
-tags: [ChatGPT, 开源]
+title: Jeff Leek can do zero-fold cross-validation
+date: '2015-07-28'
+author: Thomas Lumley
+categories:
+  - Machine Learning
+tags:
+  - Markdown
+  - Lorem Ipsum
+thumbnail: https://db.yihui.org/imgur/CwBsAqs.png
 ---
-
-
 - [microsoft/visual-chatgpt](https://github.com/microsoft/visual-chatgpt) // Visual ChatGPT 连接了 ChatGPT 和一系列视觉基础模型，使得在聊天过程中可以发送和接收图片。
 - [yetone/openai-translator](https://github.com/yetone/openai-translator) // 基于 ChatGPT API 的划词翻译浏览器插件和跨平台桌面端应用 
 - [Chanzhaoyu/chatgpt-web](https://github.com/Chanzhaoyu/chatgpt-web) // 用 Express 和 Vue3 搭建的 ChatGPT 演示网页

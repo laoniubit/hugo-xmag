@@ -1,10 +1,13 @@
 ---
-layout: post
-title: "Midjourny V5 发布！速度翻倍，费用降半，成像更快更便宜！"
-date: 2023-03-30
-categories: 技术
-tags: ["Midjourny", "Midjourny V5","成像质量"]
-slug: midjourny-v5-release-tonight
+title: Jeff Leek can do zero-fold cross-validation
+date: '2015-07-28'
+author: Thomas Lumley
+categories:
+  - Machine Learning
+tags:
+  - Markdown
+  - Lorem Ipsum
+thumbnail: https://db.yihui.org/imgur/CwBsAqs.png
 ---
 
 Midjourny V5 今晚要发布了！这次更新，我们将会带来以下三点变化：
