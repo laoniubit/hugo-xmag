@@ -6,7 +6,7 @@ author:
 date: 2017-02-01T00:00:00Z
 categories:
   - Example
-  - Hugo
+  - '161'
 tags:
   - blogdown
   - Markdown
